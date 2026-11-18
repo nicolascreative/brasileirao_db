@@ -1,4 +1,3 @@
-
 USE brasileirao_db;
 
 CREATE TABLE estadios (
@@ -6,7 +5,10 @@ CREATE TABLE estadios (
     nome VARCHAR(100) NOT NULL,
     cidade VARCHAR(100),
     estado VARCHAR(2),
-    capacidade INT
+    capacidade INT,
+    id_clube INT,
+
+    FOREIGN KEY (id_clube) REFERENCES clubes(id_clube)
 );
 
 CREATE TABLE clubes (
