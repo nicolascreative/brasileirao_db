@@ -1,2 +1,45 @@
 USE brasileirao_db;
 
+INSERT INTO estadios (id_estadio, nome, cidade, estado, capacidade) VALUES
+(1, 'Arena MRV', 'Belo Horizonte', 'MG', NULL),
+(2, 'Mineirao', 'Belo Horizonte', 'MG', NULL),
+(3, 'Independencia', 'Belo Horizonte', 'MG', NULL),
+(4, 'Maracana', 'Rio de Janeiro', 'RJ', NULL),
+(5, 'Nilton Santos', 'Rio de Janeiro', 'RJ', NULL),
+(6, 'Sao Januario', 'Rio de Janeiro', 'RJ', NULL),
+(7, 'Neo Quimica Arena', 'Sao Paulo', 'SP', NULL),
+(8, 'Allianz Parque', 'Sao Paulo', 'SP', NULL),
+(9, 'Morumbi', 'Sao Paulo', 'SP', NULL),
+(10, 'Vila Belmiro', 'Santos', 'SP', NULL),
+(11, 'Arena do Gremio', 'Porto Alegre', 'RS', NULL),
+(12, 'Beira-Rio', 'Porto Alegre', 'RS', NULL),
+(13, 'Arena da Baixada', 'Curitiba', 'PR', NULL),
+(14, 'Couto Pereira', 'Curitiba', 'PR', NULL),
+(15, 'Arena Fonte Nova', 'Salvador', 'BA', NULL),
+(16, 'Barradao', 'Salvador', 'BA', NULL),
+(17, 'Ilha do Retiro', 'Recife', 'PE', NULL),
+(18, 'Castelao', 'Fortaleza', 'CE', NULL),
+(19, 'Mangueirao', 'Belem', 'PA', NULL);
+
+INSERT INTO clubes (id_clube, nome, sigla, estado, cidade, ano_fundacao, cores, apelido, id_estadio) VALUES
+(1, 'Atletico Mineiro', 'CAM', 'MG', 'Belo Horizonte', 1908, 'Preto e branco', 'Galo', 1),
+(2, 'Cruzeiro', 'CRU', 'MG', 'Belo Horizonte', 1921, 'Azul e branco', 'Raposa', 2),
+(3, 'America Mineiro', 'AME', 'MG', 'Belo Horizonte', 1912, 'Verde e branco', 'Coelho', 3),
+(4, 'Flamengo', 'FLA', 'RJ', 'Rio de Janeiro', 1895, 'Vermelho e preto', 'Mengao', 4),
+(5, 'Fluminense', 'FLU', 'RJ', 'Rio de Janeiro', 1902, 'Verde, branco e grená', 'Tricolor', 4),
+(6, 'Botafogo', 'BOT', 'RJ', 'Rio de Janeiro', 1904, 'Preto e branco', 'Glorioso', 5),
+(7, 'Vasco da Gama', 'VAS', 'RJ', 'Rio de Janeiro', 1898, 'Preto e branco', 'Gigante da Colina', 6),
+(8, 'Corinthians', 'COR', 'SP', 'Sao Paulo', 1910, 'Preto e branco', 'Timao', 7),
+(9, 'Palmeiras', 'PAL', 'SP', 'Sao Paulo', 1914, 'Verde e branco', 'Verdão', 8),
+(10, 'Sao Paulo', 'SAO', 'SP', 'Sao Paulo', 1930, 'Vermelho, branco e preto', 'Tricolor Paulista', 9),
+(11, 'Santos', 'SAN', 'SP', 'Santos', 1912, 'Preto e branco', 'Peixe', 10),
+(12, 'Gremio', 'GRE', 'RS', 'Porto Alegre', 1903, 'Azul, preto e branco', 'Imortal', 11),
+(13, 'Internacional', 'INT', 'RS', 'Porto Alegre', 1909, 'Vermelho e branco', 'Colorado', 12),
+(14, 'Athletico Paranaense', 'CAP', 'PR', 'Curitiba', 1924, 'Vermelho e preto', 'Furacao', 13),
+(15, 'Coritiba', 'CFC', 'PR', 'Curitiba', 1909, 'Verde e branco', 'Coxa', 14),
+(16, 'Bahia', 'BAH', 'BA', 'Salvador', 1931, 'Azul, vermelho e branco', 'Tricolor de Aço', 15),
+(17, 'Vitoria', 'VIT', 'BA', 'Salvador', 1899, 'Vermelho e preto', 'Leao da Barra', 16),
+(18, 'Sport Recife', 'SPO', 'PE', 'Recife', 1905, 'Vermelho e preto', 'Leao', 17),
+(19, 'Fortaleza', 'FOR', 'CE', 'Fortaleza', 1918, 'Azul, vermelho e branco', 'Leao do Pici', 18),
+(20, 'Paysandu', 'PAY', 'PA', 'Belem', 1914, 'Azul e branco', 'Papao da Curuzu', 19);
+
