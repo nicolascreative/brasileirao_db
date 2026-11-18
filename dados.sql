@@ -43,3 +43,10 @@ INSERT INTO clubes (id_clube, nome, sigla, estado, cidade, ano_fundacao, cores, 
 (19, 'Fortaleza', 'FOR', 'CE', 'Fortaleza', 1918, 'Azul, vermelho e branco', 'Leao do Pici', 18),
 (20, 'Paysandu', 'PAY', 'PA', 'Belem', 1914, 'Azul e branco', 'Papao da Curuzu', 19);
 
+INSERT INTO competicoes (id_competicao, nome, categoria, abrangencia, organizacao) VALUES
+(1, 'Campeonato Brasileiro Serie A', 'Pontos corridos', 'Nacional', 'CBF'),
+(2, 'Copa do Brasil', 'Mata-mata', 'Nacional', 'CBF'),
+(3, 'Copa Libertadores', 'Mata-mata', 'Continental', 'CONMEBOL'),
+(4, 'Copa Sul-Americana', 'Mata-mata', 'Continental', 'CONMEBOL'),
+(5, 'Mundial de Clubes', 'Mata-mata', 'Mundial', 'FIFA');
+
