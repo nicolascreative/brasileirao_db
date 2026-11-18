@@ -55,6 +55,8 @@ CREATE TABLE participacoes (
     vitorias INT,
     empates INT,
     derrotas INT,
+    gols_pro INT,
+    gols_contra INT,
 
     FOREIGN KEY (id_clube)
     REFERENCES clubes(id_clube),
@@ -62,4 +64,3 @@ CREATE TABLE participacoes (
     FOREIGN KEY (id_competicao)
     REFERENCES competicoes(id_competicao)
 );
-
