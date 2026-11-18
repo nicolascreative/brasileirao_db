@@ -1,20 +1,5 @@
 USE brasileirao_db;
 
-CREATE TABLE clubes (
-    id_clube INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sigla VARCHAR(5),
-    estado VARCHAR(2),
-    cidade VARCHAR(100),
-    ano_fundacao INT,
-    cores VARCHAR(100),
-    apelido VARCHAR(100),
-    id_estadio INT,
-
-    FOREIGN KEY (id_estadio)
-    REFERENCES estadios(id_estadio)
-);
-
 CREATE TABLE estadios (
     id_estadio INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -64,3 +49,19 @@ CREATE TABLE participacoes (
     FOREIGN KEY (id_competicao)
     REFERENCES competicoes(id_competicao)
 );
+
+CREATE TABLE clubes (
+    id_clube INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    sigla VARCHAR(5),
+    estado VARCHAR(2),
+    cidade VARCHAR(100),
+    ano_fundacao INT,
+    cores VARCHAR(100),
+    apelido VARCHAR(100),
+    id_estadio INT,
+
+    FOREIGN KEY (id_estadio)
+    REFERENCES estadios(id_estadio)
+);
+
