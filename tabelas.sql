@@ -38,12 +38,6 @@ CREATE TABLE participacoes (
     qtd_participacoes INT DEFAULT 0,
     titulos INT DEFAULT 0,
     vices INT DEFAULT 0,
-    jogos INT DEFAULT 0,
-    vitorias INT DEFAULT 0,
-    empates INT DEFAULT 0,
-    derrotas INT DEFAULT 0,
-    gols_pro INT DEFAULT 0,
-    gols_contra INT DEFAULT 0,
 
     FOREIGN KEY (id_clube)
     REFERENCES clubes(id_clube),
@@ -53,5 +47,6 @@ CREATE TABLE participacoes (
 
     UNIQUE (id_clube, id_competicao)
 );
+
 
 
