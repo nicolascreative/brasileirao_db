@@ -37,6 +37,7 @@ CREATE TABLE participacoes (
     id_competicao INT NOT NULL,
     qtd_participacoes INT DEFAULT 0,
     titulos INT DEFAULT 0,
+    vices INT DEFAULT 0,
     jogos INT DEFAULT 0,
     vitorias INT DEFAULT 0,
     empates INT DEFAULT 0,
@@ -52,4 +53,5 @@ CREATE TABLE participacoes (
 
     UNIQUE (id_clube, id_competicao)
 );
+
 
