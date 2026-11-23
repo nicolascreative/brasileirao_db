@@ -31,36 +31,25 @@ CREATE TABLE competicoes (
     organizacao VARCHAR(100)
 );
 
-CREATE TABLE titulos (
-    id_titulo INT AUTO_INCREMENT PRIMARY KEY,
-    id_clube INT NOT NULL,
-    id_competicao INT NOT NULL,
-    ano INT NOT NULL,
-
-    FOREIGN KEY (id_clube)
-    REFERENCES clubes(id_clube),
-
-    FOREIGN KEY (id_competicao)
-    REFERENCES competicoes(id_competicao)
-);
-
 CREATE TABLE participacoes (
     id_participacao INT AUTO_INCREMENT PRIMARY KEY,
     id_clube INT NOT NULL,
     id_competicao INT NOT NULL,
-    ano INT NOT NULL,
-    colocacao INT,
-    pontos INT,
-    jogos INT,
-    vitorias INT,
-    empates INT,
-    derrotas INT,
-    gols_pro INT,
-    gols_contra INT,
+    qtd_participacoes INT DEFAULT 0,
+    titulos INT DEFAULT 0,
+    jogos INT DEFAULT 0,
+    vitorias INT DEFAULT 0,
+    empates INT DEFAULT 0,
+    derrotas INT DEFAULT 0,
+    gols_pro INT DEFAULT 0,
+    gols_contra INT DEFAULT 0,
 
     FOREIGN KEY (id_clube)
     REFERENCES clubes(id_clube),
 
     FOREIGN KEY (id_competicao)
-    REFERENCES competicoes(id_competicao)
+    REFERENCES competicoes(id_competicao),
+
+    UNIQUE (id_clube, id_competicao)
 );
+
