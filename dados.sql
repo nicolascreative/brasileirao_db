@@ -1,6 +1,4 @@
-USE brasileirao_db;
-
-INSERT INTO estadios (id_estadio, nome, cidade, estado, capacidade) VALUES
+INSERT INTO estadios (id_estadio, nome, cidade, estado, capacidade) OVERRIDING SYSTEM VALUE VALUES
 (1, 'Arena MRV', 'Belo Horizonte', 'MG', NULL),
 (2, 'Mineirao', 'Belo Horizonte', 'MG', NULL),
 (3, 'Independencia', 'Belo Horizonte', 'MG', NULL),
@@ -21,7 +19,8 @@ INSERT INTO estadios (id_estadio, nome, cidade, estado, capacidade) VALUES
 (18, 'Castelao', 'Fortaleza', 'CE', NULL),
 (19, 'Mangueirao', 'Belem', 'PA', NULL);
 
-INSERT INTO clubes (id_clube, nome, sigla, estado, cidade, ano_fundacao, cores, apelido, id_estadio) VALUES
+INSERT INTO clubes
+(id_clube, nome, sigla, estado, cidade, ano_fundacao, cores, apelido, id_estadio) OVERRIDING SYSTEM VALUE VALUES
 (1, 'Atletico Mineiro', 'CAM', 'MG', 'Belo Horizonte', 1908, 'Preto e branco', 'Galo', 1),
 (2, 'Cruzeiro', 'CRU', 'MG', 'Belo Horizonte', 1921, 'Azul e branco', 'Raposa', 2),
 (3, 'America Mineiro', 'AME', 'MG', 'Belo Horizonte', 1912, 'Verde e branco', 'Coelho', 3),
@@ -43,32 +42,42 @@ INSERT INTO clubes (id_clube, nome, sigla, estado, cidade, ano_fundacao, cores, 
 (19, 'Fortaleza', 'FOR', 'CE', 'Fortaleza', 1918, 'Azul, vermelho e branco', 'Leao do Pici', 18),
 (20, 'Paysandu', 'PAY', 'PA', 'Belem', 1914, 'Azul e branco', 'Papao da Curuzu', 19);
 
-INSERT INTO competicoes (id_competicao, nome, categoria, abrangencia, organizacao) VALUES
+INSERT INTO competicoes (id_competicao, nome, categoria, abrangencia, organizacao)OVERRIDING SYSTEM VALUE VALUES
 (1, 'Campeonato Brasileiro Serie A', 'Pontos corridos', 'Nacional', 'CBF'),
 (2, 'Copa do Brasil', 'Mata-mata', 'Nacional', 'CBF'),
 (3, 'Copa Libertadores', 'Mata-mata', 'Continental', 'CONMEBOL'),
 (4, 'Copa Sul-Americana', 'Mata-mata', 'Continental', 'CONMEBOL'),
 (5, 'Mundial de Clubes', 'Mata-mata', 'Mundial', 'FIFA');
 
--- brasileirao serie A
+
+-- BRASILEIRAO SERIE A
 INSERT INTO participacoes (id_clube, id_competicao, qtd_participacoes, titulos, vices) VALUES
-(1, 1, 25, 1, 2), -- galo
-(2, 1, 23, 3, 1), -- bruzeiro
-(3, 1, 8, 0, 0), -- america M
-(4, 1, 26, 4, 2), -- flamengo
-(5, 1, 26, 2, 0), -- fluminense
-(6, 1, 23, 1, 0), -- botafogo
-(7, 1, 21, 1, 1), -- vasco
-(8, 1, 25, 4, 1), -- corinthians
-(9, 1, 24, 4, 3), -- palmeiras
-(10, 1, 26, 3, 1), -- sao paulo
-(11, 1, 25, 2, 4), -- santos
-(12, 1, 24, 0, 3), -- gremio
-(13, 1, 25, 0, 5), -- internacional
-(14, 1, 24, 1, 1), -- athletico paranaense
-(15, 1, 18, 0, 0), -- coritiba
-(16, 1, 16, 0, 0), -- bahia
-(17, 1, 15, 0, 0), -- vitoria
-(18, 1, 14, 0, 0), -- sport
-(19, 1, 10, 0, 0), -- fortaleza
-(20, 1, 1, 0, 0); -- paysandu
+(1, 1, 25, 1, 2), -- Galo
+(2, 1, 23, 3, 1), -- Cruzeiro
+(3, 1, 8, 0, 0),  -- America MG
+(4, 1, 26, 4, 2), -- Flamengo
+(5, 1, 26, 2, 0), -- Fluminense
+(6, 1, 23, 1, 0), -- Botafogo
+(7, 1, 21, 1, 1), -- Vasco
+(8, 1, 25, 4, 1), -- Corinthians
+(9, 1, 24, 4, 3), -- Palmeiras
+(10, 1, 26, 3, 1), -- Sao Paulo
+(11, 1, 25, 2, 4), -- Santos
+(12, 1, 24, 0, 3), -- Gremio
+(13, 1, 25, 0, 5), -- Internacional
+(14, 1, 24, 1, 1), -- Athletico Paranaense
+(15, 1, 18, 0, 0), -- Coritiba
+(16, 1, 16, 0, 0), -- Bahia
+(17, 1, 15, 0, 0), -- Vitoria
+(18, 1, 14, 0, 0), -- Sport
+(19, 1, 10, 0, 0), -- Fortaleza
+(20, 1, 1, 0, 0);  -- Paysandu
+
+SELECT setval(pg_get_serial_sequence('estadios', 'id_estadio'),
+              (SELECT MAX(id_estadio) FROM estadios));
+
+SELECT setval(pg_get_serial_sequence('clubes', 'id_clube'),
+              (SELECT MAX(id_clube) FROM clubes));
+
+SELECT setval(pg_get_serial_sequence('competicoes', 'id_competicao'),
+              (SELECT MAX(id_competicao) FROM competicoes));
