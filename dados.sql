@@ -50,3 +50,25 @@ INSERT INTO competicoes (id_competicao, nome, categoria, abrangencia, organizaca
 (4, 'Copa Sul-Americana', 'Mata-mata', 'Continental', 'CONMEBOL'),
 (5, 'Mundial de Clubes', 'Mata-mata', 'Mundial', 'FIFA');
 
+-- brasileirao serie A
+INSERT INTO participacoes (id_clube, id_competicao, qtd_participacoes, titulos, vices) VALUES
+(1, 1, 25, 1, 2), -- galo
+(2, 1, 23, 3, 1), -- bruzeiro
+(3, 1, 8, 0, 0), -- america M
+(4, 1, 26, 4, 2), -- flamengo
+(5, 1, 26, 2, 0), -- fluminense
+(6, 1, 23, 1, 0), -- botafogo
+(7, 1, 21, 1, 1), -- vasco
+(8, 1, 25, 4, 1), -- corinthians
+(9, 1, 24, 4, 3), -- palmeiras
+(10, 1, 26, 3, 1), -- sao paulo
+(11, 1, 25, 2, 4), -- santos
+(12, 1, 24, 0, 3), -- gremio
+(13, 1, 25, 0, 5), -- internacional
+(14, 1, 24, 1, 1), -- athletico paranaense
+(15, 1, 18, 0, 0), -- coritiba
+(16, 1, 16, 0, 0), -- bahia
+(17, 1, 15, 0, 0), -- vitoria
+(18, 1, 14, 0, 0), -- sport
+(19, 1, 10, 0, 0), -- fortaleza
+(20, 1, 1, 0, 0); -- paysandu
