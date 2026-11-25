@@ -1,6 +1,6 @@
 <?php
 // Conexao com o banco PostgreSQL
-$conn = pg_connect("host=localhost port=5432 dbname=brasileirao_db user=postgres password=SUA_SENHA");
+$conn = pg_connect("host=localhost port=5432 dbname=brasileirao_db user=postgres password=1809");
 
 if (!$conn) {
     die("Erro ao conectar ao banco de dados.");
